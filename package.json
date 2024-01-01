@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "build:dev": "tsc -p -w .",
+    "start": "node dist/index.js",
+    "start:dev": "node --watch dist/index.js",
+    "dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
+    "format": "prettier .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "fix": "npm run format:fix && npm run lint:fix"
+  }
+}
